@@ -2,4 +2,4 @@
 Bitacora de JavaScript interactivo: DOM, eventos y objetos
 
 -	[Bitacora de JavaScript interactivo](notas/BITACORA.md)
--	[Ver la pagina en vivo](https://github.com/kasandracruz-dev/lab08-dom)
+- [Ver la pagina en vivo](https://kasandracruz-dev.github.io/lab08-dom/)
