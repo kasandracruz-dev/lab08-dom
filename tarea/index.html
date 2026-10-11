@@ -3,11 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestor de Tareas - Tarea Lab 08</title>
+  <title>Gestor de Tareas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+    .completada {
+      text-decoration: line-through;
+      color: gray;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    button {
+      margin-left: 8px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Gestor de Tareas (v1)</h1>
+  <h1>Gestor de Tareas Interactivo</h1>
+  
+  <form id="formTarea">
+    <input type="text" id="txtTitulo" placeholder="Escribe la tarea...">
+    <select id="selectPrioridad">
+      <option value="Alta">Alta</option>
+      <option value="Media">Media</option>
+      <option value="Baja">Baja</option>
+    </select>
+    <button type="submit">Agregar</button>
+  </form>
+
+  <p id="mensajeError" class="error"></p>
   <ul id="listaTareas"></ul>
+
   <script src="app.js"></script>
 </body>
 </html>

@@ -26,8 +26,30 @@ listaTareas.appendChild(li);
 
 ## Version 3: con clases y objetos 
 
+- **Qué agregué:** La clase Tarea con el constructor, tres atributos (titulo, prioridad, completada) y dos métodos (alternarEstado() y obtenerFormato()).
+
+- **Por qué:** Para organizar el proyecto con Programación Orientada a Objetos, manteniendo la lógica y el estado de los datos separados de la manipulación visual.
+
+- **Qué cambió:** Cada nueva tarea creada se procesa como un objeto instanciado, actualizando de forma limpia su texto e interfaz tras cada acción del usuario.
+
 ## Donde uso DOM, eventos y objetos 
+
+| Pieza | Linea de tu codigo donde aparece | Para que sirve |
+|-------|----------------------------------|----------------|
+|DOM |const listaTareas = document.querySelector("#listaTareas");|Selecciona el contenedor de la lista para agregar o remover elementos HTML dinámicamente|
+|Evento|formTarea.addEventListener("submit", (e) => { ... });|Escucha cuando el usuario presiona "Agregar" para procesar el formulario sin recargar la página.|
+|Objeto|const nuevaTarea = new Tarea(txtTitulo.value, selectPrioridad.value);|Instancia una nueva tarea utilizando la clase Tarea para administrar sus atributos y métodos propios.|
 
 ## Pruebas realizadas
 
+| Accion | Resultado esperado | Resultado obtenido |Cumple(Si/No)|
+|--------|--------------------|--------------------|-------------|
+|Enviar el formulario vacío|Muestra mensaje rojo "El título de la tarea no puede estar vacío."|Aparece el mensaje en rojo bajo el formulario|Si|
+|Escribir en el input tras error|El mensaje de error desaparece en vivo|El mensaje se elimina instantáneamente al presionar una tecla|Si|
+|Agregar "Estudiar JS" con prioridad Alta|Se agrega la tarea a la lista con estado "(Pendiente)"|Aparece el nuevo ítem li con los datos formateados correctamente|Si|
+|Hacer clic en "Marcar / Desmarcar"|Cambia a "(Completada)" y se aplica texto tachado|El texto cambia de estado y se aplica el estilo visual|Si|
+|Hacer clic en "Borrar"|Elimina la tarea correspondiente de la lista|El elemento li se remueve completamente del DOM|Si|
+
 ## Por que disene asi mi clase
+
+Diseñé la clase Tarea con los atributos titulo, prioridad y completada para concentrar en un solo lugar la información requerida de cada tarea. Agregué los métodos alternarEstado() y obtenerFormato() para permitir que la tarea modifique de forma autónoma su propio estado booleano y genere su representación textual sin mezclar la lógica de los datos con la manipulating directa del DOM.
